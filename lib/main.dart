@@ -62,28 +62,31 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Row(
+              
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                     onPressed: () {
                       http.post(
-                          Uri.parse('https:/raspberrypi.local:5000/set_stat'),
+                          Uri.parse('http://raspberrypi.local:5000/set_stat'),
                           headers: <String, String>{
                             'Content-Type': 'application/json; charset=UTF-8',
                           },
                           body: jsonEncode(<String, dynamic>{
-                            'num': 3,
+                            'data': 4,
                           }));
                     },
                     child: const Text('open')),
+                    Container(margin: const EdgeInsets.all(10)),
                 ElevatedButton(
                     onPressed: () {
                       http.post(
-                          Uri.parse('https:/raspberrypi.local:5000/set_stat'),
+                          Uri.parse('http://raspberrypi.local:5000/set_stat'),
                           headers: <String, String>{
                             'Content-Type': 'application/json; charset=UTF-8',
                           },
                           body: jsonEncode(<String, dynamic>{
-                            'num': 3,
+                            'data': 5,
                           }));
                     },
                     child: const Text('close'))
